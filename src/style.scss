@@ -1,0 +1,13 @@
+body {
+
+  font-family: Arial, sans-serif;
+
+  &.background-loading{
+    background-color: aliceblue;
+  }
+
+  &.background-main{
+    background-color: rgb(33, 83, 33);
+  }
+
+}

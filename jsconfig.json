@@ -1,0 +1,20 @@
+{
+    "compilerOptions": {
+      "target": "ES6",                      // Define el estándar ECMAScript
+      "module": "ES6",                      // Define el sistema de módulos
+      "moduleResolution": "node",           // Resuelve los módulos usando la estrategia de Node.js
+      "baseUrl": ".",                       // Base para resolver rutas relativas
+      "paths": {                            // Alias de rutas (si tienes alguno)
+        "@/*": ["src/*"]
+      },
+      "jsx": "preserve"                     // Para proyectos con JSX
+    },
+    "exclude": [
+      "node_modules",                       // Excluye la carpeta node_modules
+      "dist"                                // Excluye la carpeta de salida de tu build
+    ],
+    "include": [
+      "src/**/*"                            // Incluye todos los archivos en la carpeta src
+    ]
+  }
+  
