@@ -1,30 +1,22 @@
 <template>
     
-<nombreSvg />
+<nombreSvg class="nombreSvgMain"/>
 
-<h1 class="enfoque">Back-End Developer jr. Java</h1>
-  <main>
+
+  <main class="seccion1">
     <div class="container">
-          
-         <p class="descripcion"> 
-          
-
-        Soy un desarrollador backend especializado en Java y SpringBoot, 
-        comprometido con afrontar y resolver desafíos con perseverancia. 
-        Mi enfoque está en la mejora continua y en ofrecer soluciones eficientes y confiables, 
-        con entusiasmo de poder aportar valor y nuevas ideas a su empresa.
-
-         </p>
+         <Descripcion />
+         <Botonproyectos  @click="goToProyectos" />
 
    </div>
 
   </main>
-
+<div class="seccion2">
 <div class="contenedor-quien-soy" @click="goToQuienSoy">
     <QuienSoy/>
   </div>
 
-  <div class="contenedor-post-habilidades">
+  <div class="contenedor-post-habilidades" @click="goToHabilidades">   
   <PostHabilidades/>
 </div>
 
@@ -38,6 +30,8 @@
 
 <div class="contenedor-contratame">
      <post-contratame/>
+</div>
+
 </div>
 
 </template>
@@ -57,6 +51,9 @@ import PostProyectos from './postProyectos.vue';
 import postContratame from './postContratame.vue';
 import PostContratame from './postContratame.vue';
 import QuienSoyPage from '../About-me/QuienSoyPage.vue';
+import Descripcion from './Descripcion.vue';
+import Botonproyectos from './Botonproyectos.vue';
+import MainProjects from '../projects/MainProjects.vue';
 
 
 export default {
@@ -67,23 +64,63 @@ export default {
         PostHabilidades,
         PostRedes,
         PostProyectos,
-        PostContratame
+        PostContratame,
+        Descripcion,
+        Botonproyectos,
+        MainProjects
+  },
+
+  mounted(){
+    if(this.$route.path === '/' || this.$route.path === '/QuienSoyPage'){
+      document.documentElement.style.scrollSnapType = 'y mandatory';
+      document.documentElement.style.scrollBehavior = 'smooth';
+
+      document.addEventListener('wheel', this.smoothScroll, { passive:false});
+    }
+  },
+
+  beforeDestroy(){
+    document.documentElement.style.scrollSnapType = '';
+    document.documentElement.style.scrollBehavior = '';
+
+    document.removeEventListener('wheel', this.smoothScroll);
   },
 
 methods: {
+
+  smoothScroll (event){
+  event.preventDefault();
+  const scrollStep = window.innerHeight / 50; // Ajusta el valor para controlar la velocidad
+  window.scrollBy({
+    top: event.deltaY > 0 ? scrollStep : -scrollStep,
+    behavior: 'smooth'
+  });
+},
+
   goToQuienSoy(){
        this.$router.push('/QuienSoyPage');
-  }
+  },
+
+  goToHabilidades(){
+            this.$router.push('/Tecnologias');
+        },
+        goToProyectos(){
+  this.$router.push('/MainProjects')
+   }  
  }
 };
+
+
+
+
 
 </script>
 
 
 
-<style>
+<style escoped>
    
-.nombre-svg{
+.nombreSvgMain{
     position: absolute;
         left: 42%;
         top: -2%;
@@ -99,8 +136,14 @@ methods: {
 }
 
 
- main{
-   min-height: 120vh;
+html, body{
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+}
+
+ .seccion1{
+  scroll-snap-align: start;
+   height: 100vh;
    display: flex;
    flex-direction: column;
    align-items: center;
@@ -108,9 +151,14 @@ methods: {
    
  }
 
+ .seccion2{
+  scroll-snap-align: start;
+   height: 100vh;
+ }
+
 .container{
  
-   border: 1px solid #000;
+   margin-top: -10%;
    padding: 25px;
    border-radius: 5px;
    width: 70%;
@@ -130,7 +178,7 @@ methods: {
 .contenedor-quien-soy {
   display: flex;
   justify-content: center; /* Centra el SVG horizontalmente */
-  margin-right: 60%; 
+  margin-right: 60%;      
   cursor: pointer;
 }
 
@@ -139,6 +187,7 @@ methods: {
   justify-content: center; 
   margin-left: 1%;
   margin-top: -28%;
+  cursor: pointer;
 }
 
 .contenedor-redes{

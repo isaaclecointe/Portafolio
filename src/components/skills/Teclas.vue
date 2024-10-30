@@ -1,0 +1,106 @@
+<template>
+    <div class="container-tecla">
+        <div class="svg-wrapper">
+            <svg class="tecla-1" width="355" height="184" viewBox="0 0 455 184" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M382.655 129.03L421.751 155.999" stroke="black" stroke-width="3"/>
+<path d="M386.055 15.4574L421.75 9.7598" stroke="black" stroke-width="3"/>
+<g filter="url(#filter0_d_438_398)">
+<path d="M7 9L37.5963 15.8372M7 9V156.379H426V9H7Z" stroke="black" stroke-width="4"/>
+<path d="M38.4463 15.8371V129.03" stroke="black" stroke-width="4"/>
+<path d="M39.2959 129.03H386.904V15.8371H39.2959" stroke="black" stroke-width="4"/>
+<path d="M39.2961 130.17L7 156.379" stroke="black" stroke-width="4"/>
+</g>
+<text x="40%" y="50%" text-anchor="middle" dominant-baseline="auto" 
+class="tecla-text" fill="black">{{ nombreTecnologia }}</text>
+<defs>
+<filter id="filter0_d_438_398" x="0" y="0" width="455" height="183.379" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dx="11" dy="9"/>
+<feGaussianBlur stdDeviation="8"/>
+<feComposite in2="hardAlpha" operator="out"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_438_398"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_438_398" result="shape"/>
+</filter>
+</defs>
+</svg>
+
+<div class="porcentaje-wrapper">
+<Porcentaje1 :nivel="nivel" :porcentaje="porcentaje"/>
+</div>
+
+    </div>
+</div>
+
+
+
+</template>
+
+<script>
+
+import Porcentaje1 from './Porcentaje1.vue'
+
+export default{
+
+components:{
+    Porcentaje1
+},
+
+    props:{
+        nombreTecnologia:{
+            type: String,
+            Required: true
+        },
+        nivel:{
+            type: String,
+            required: true
+        },
+       porcentaje:{
+        type: Number,
+       }
+
+    }
+};
+</script>
+
+<style >
+
+.container-tecla{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 50px;
+  margin-bottom: 30px;
+  width: 100%;
+  display: inline-block;
+}
+
+
+.svg-wrapper {
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;
+    margin-right: 10%;
+}              
+
+.tecla-text{
+    font-size: 3em;
+    font-family: 'Oxanium', sans-serif;
+}
+
+.tecla-1{
+    width: 25%;
+    height: auto;
+}
+
+.porcentaje-wrapper{
+    flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 40px;
+}
+
+
+</style>
+

@@ -6,6 +6,8 @@ import nombreSvg from './components/nombreSvg.vue'
 
 
 
+
+
 const app = createApp(App)
 
 app.component('nombre-svg', nombreSvg);

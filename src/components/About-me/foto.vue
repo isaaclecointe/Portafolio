@@ -50,11 +50,11 @@
 </template>
 
 <style>
-
+/* 
 .foto-me{
     margin-top: 10%;
     margin-left: 12%;
-}
+} */
 
 
 
