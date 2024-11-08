@@ -12,24 +12,48 @@
 
   </main>
 <div class="seccion2">
-<div class="contenedor-quien-soy" @click="goToQuienSoy">
-    <QuienSoy/>
+<div class="contenedor-quien-soy" >
+    <div class="Quien-Soy" @click="goToQuienSoy">
+       <h2 class="sobre-mi">Quien Soy?</h2>
+    </div>
   </div>
 
-  <div class="contenedor-post-habilidades" @click="goToHabilidades">   
-  <PostHabilidades/>
+  <div class="contenedor-post-habilidades" >   
+      <div class="postHabilidades">
+            <h2 class="titulo-habilidades" @click="goToHabilidades" > Habilidades Tecnicas</h2>
+            
+            <p class="parrafo-habilidades">"Explora las herramientas y tecnologías que 
+              domino para desarrollar soluciones digitales
+              innovadoras y funcionales. ¡Descubre cómo 
+              transformo ideas en realidad!"</p>
+              
+      </div>
+</div>
+
+<!--<div class="contenedor-redes">
+    <post-redes/>
+</div>-->
+
+<div class="contenedor-proyectos">
+      <div class="proyectos">
+        <h2 class="titulo-proyectos"  @click="goToProyectos" >Mis Proyectos</h2>
+               <p class="parrafo-proyectos"> 
+
+                "Descubre mis proyectos más recientes, donde aplico creatividad y habilidades 
+                técnicas para resolver problemas y aportar valor real."
+
+               </p>
+      </div>
 </div>
 
 <div class="contenedor-redes">
-    <post-redes/>
+  <FlechaSvg :direction="isExpanded ? 'up' : 'down'" @click="toggleExpand" class="flecha"/>
+  <div v-show="isExpanded">
+  <redLinkedin />
+  <redGitHub />
+  <redDiscord />
+  <redCorreo />
 </div>
-
-<div class="contenedor-proyectos">
-    <PostProyectos/>
-</div>
-
-<div class="contenedor-contratame">
-     <post-contratame/>
 </div>
 
 </div>
@@ -54,6 +78,12 @@ import QuienSoyPage from '../About-me/QuienSoyPage.vue';
 import Descripcion from './Descripcion.vue';
 import Botonproyectos from './Botonproyectos.vue';
 import MainProjects from '../projects/MainProjects.vue';
+import flechaSvg from '../About-me/flechaSvg.vue';
+import FlechaSvg from '../About-me/flechaSvg.vue';
+import redLinkedin from './redLinkedin.vue';
+import redGitHub from './redGitHub.vue';
+import redDiscord from './redDiscord.vue';
+import redCorreo from './redCorreo.vue';
 
 
 export default {
@@ -67,7 +97,12 @@ export default {
         PostContratame,
         Descripcion,
         Botonproyectos,
-        MainProjects
+        MainProjects,
+        FlechaSvg,
+        redLinkedin,
+        redGitHub,
+        redDiscord,
+        redCorreo
   },
 
   mounted(){
@@ -86,7 +121,17 @@ export default {
     document.removeEventListener('wheel', this.smoothScroll);
   },
 
+  data(){
+    return{
+      isExpanded:false
+    };
+  },
+
 methods: {
+
+  toggleExpand(){
+        this.isExpanded = !this.isExpanded;
+      },  
 
   smoothScroll (event){
   event.preventDefault();
@@ -106,12 +151,10 @@ methods: {
         },
         goToProyectos(){
   this.$router.push('/MainProjects')
-   }  
+   }, 
+   
  }
 };
-
-
-
 
 
 </script>
@@ -179,32 +222,136 @@ html, body{
   display: flex;
   justify-content: center; /* Centra el SVG horizontalmente */
   margin-right: 60%;      
-  cursor: pointer;
+  padding-top: 80px;
+}
+
+.Quien-Soy{
+  width: 300px;
+    height: 560px;
+    border: 2px ;
+    border-radius: 20px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-image:none;
+    position: relative;
+    transform-style: preserve-3d;
+    animation: rot 2s infinite ease;
+    overflow: hidden;
+    box-shadow: 10px 10px;
+    padding-left: 20px;
+    transition: opacity 0.5s ease;
+    cursor: pointer;
+}
+
+.sobre-mi{
+  font-family: 'QuickSand', sans-serif;
+  font-weight: 900;
+  font-size: 48px;
+  z-index: 1;
+}
+
+
+.Quien-Soy::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("../src/assets/fotoMe.jpg");
+    background-size: cover;
+    opacity: 0;
+    transition: opacity 0.8s ease;
+    z-index: 0;
+   
+}
+
+.Quien-Soy:hover::before {
+    opacity: 0.8;
+    align-items:first baseline;
+}
+
+.Quien-Soy:hover {
+    
+    align-items:first baseline;
 }
 
 .contenedor-post-habilidades{
   display: flex;
   justify-content: center; 
-  margin-left: 1%;
-  margin-top: -28%;
+  margin-left: 20%;
+  margin-top: -35%;
   cursor: pointer;
 }
 
-.contenedor-redes{
-  display: flex;
-  justify-content: center; 
-  margin-left: 60%;
-  margin-top: -28%;
+.postHabilidades{
+  width: 650px;
+  height: 220px;
+  border: 2px solid;
+  border-radius: 40px;
+  box-shadow: 10px 10px;
+  padding: 5px 20px;
 }
 
+.titulo-habilidades{
+  font-family: 'QuickSand', sans-serif;
+  font-weight: 900;
+  font-size: 34px;
+  cursor: pointer;
+}
+
+.parrafo-habilidades{
+  font-family: 'QuickSand', sans-serif;
+  font-weight: 500;
+  font-size: 22px;
+}
 
 .contenedor-proyectos{
   display: flex;
   justify-content: center; 
-  margin-left: -30%;
-
+  margin-left: 20%;
+  margin-top: 3%;
   
 }
+
+
+.proyectos{
+  width: 650px;
+  height: 220px;
+  border: 2px solid;
+  border-radius: 40px;
+  box-shadow: 0px 10px;
+  padding: 5px 20px;
+
+  justify-content: center;
+}
+
+.titulo-proyectos{
+  font-family: 'QuickSand', sans-serif;
+  font-weight: 900;
+  font-size: 34px;
+  cursor: pointer;
+}
+
+.parrafo-proyectos{
+  font-family: 'QuickSand', sans-serif;
+  font-weight: 500;
+  font-size: 22px;
+}
+
+.contenedor-redes{
+  width: 210px;
+  border: 2px solid;
+  margin-left: 84%;
+  margin-top: -38.8%;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 10px;
+
+}
+
+
 
 .contenedor-contratame{
   display: flex;
