@@ -39,7 +39,7 @@ class="tecla-text" fill="black">{{ nombreTecnologia }}</text>
 
 <script>
 
-import Porcentaje1 from './Porcentaje1.vue'
+import Porcentaje1 from './Habilidades1.vue'
 
 export default{
 
