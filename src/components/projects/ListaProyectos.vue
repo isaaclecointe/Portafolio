@@ -21,11 +21,12 @@
         </div>
        
     </div>
-
+        <transition name="fade">
         <div v-if="previewImage" class="preview-container">
             <img :src="previewImage" alt="vista previa del proyecto" class="preview-Image" />
-        </div>
-        </div>
+           </div>
+        </transition>  
+    </div>
 
     
     
@@ -83,6 +84,21 @@
 
 
 <style >
+
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity 1.0s ease,  transform 1.0s ease, filter 1.0s ease;
+}
+.fade-enter-from, .fade-leave-to {
+  opacity: 0;
+ transform: scale(0.95);
+ filter: blur(4px);
+}
+.fade-enter-to, .fade-leave-from {
+  opacity: 1;
+  transform: scale(1);
+  filter: blur(0);
+}
 
 
 
@@ -152,7 +168,7 @@
     right: -15px; 
 }
 
-.preview-image{
+.preview-Image{
       width: 100%;
       height: auto;
       

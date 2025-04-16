@@ -1,24 +1,44 @@
 <template>
     
    <!--/ From Uiverse.io by Saad3092003 */ --> 
-<div class="one-div">
-  <div class="text"> 
-     <p>  
-        Soy un desarrollador backend especializado en Java y SpringBoot, 
-        comprometido con afrontar y resolver desafíos con perseverancia. 
-        Mi enfoque está en la mejora continua y en ofrecer soluciones eficientes y confiables, 
-        con entusiasmo de poder aportar valor y nuevas ideas a su empresa.
+ <!--<div class="one-div"></div>-->
+ <div class="contenedor-text"> 
+     <p class="texto">  
+        {{ textoVisible }} <span class="cursor">|</span>
     </p> 
     </div>
-</div>
+
 
 
 </template>
 
 
+<script setup>
+
+import {ref, onMounted} from 'vue'
+
+const textoVisible = ref ('');
+const textoCompleto = `Soy un desarrollador backend especializado en Java y SpringBoot, comprometido con afrontar y resolver desafíos con perseverancia. Mi enfoque está en la mejora continua y en ofrecer soluciones eficientes y confiables,  con entusiasmo de poder aportar valor y nuevas ideas a su empresa.` ;
+
+
+onMounted(() =>{
+    let i = 0;
+    const intervalo = setInterval(() => {
+        if(i < textoCompleto.length){
+            textoVisible.value += textoCompleto.charAt(i);
+            i++;
+        }else{
+            clearInterval(intervalo);
+        }
+    }, 80);
+})
+
+</script>
+
+
 <style>
 
-.one-div {
+/* .one-div {
  
   position: relative;
   height: 380px;
@@ -34,40 +54,41 @@
   justify-content: center;
   align-items: center;
   overflow: hidden;
+} */
+
+.contenedor-text{
+  width: 68%;
+  height: 380px;
+  background-color: transparent; /* Sin fondo oscuro */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
 }
 
-.one-div .text {
-  opacity: 0;
-  transition: all 0.5s;
-  text-align: left;
-  line-height: 1.2em;
-  max-width: 90%;
-  font-size: 1.5em;
-  font-family:'Poiret One', sans-serif;
+.texto{
+  font-size: 18px;
+  color: black;
+  font-family: "Fredoka", sans-serif;
+  white-space: pre-wrap;
+
+  
 }
 
-.one-div:hover.one-div .text {
-  scale: 1.05;
-  opacity: 0.7;
+.cursor {
+  display: inline-block;
+  width: 4px;
+  background-color: black;
+  animation: blink 1s step-end infinite;
 }
 
-.one-div:hover {
-  box-shadow: 0 0 50px 0px, inset 5px 5px 20px 0px black;
+/* Animacion de escritura*/
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
 }
 
-@keyframes rot {
-  0% {
-    transform: rotateX(-15deg) translateY(0px);
-  }
-
-  50% {
-    transform: rotateX(-15deg) translateY(-10px);
-  }
-
-  100% {
-    transform: rotateX(-15deg) translateY(0px);
-  }
-}
 
 
 </style>

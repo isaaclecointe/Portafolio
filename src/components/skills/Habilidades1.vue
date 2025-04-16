@@ -1,5 +1,6 @@
 <template>
 
+
 <!-- /* From Uiverse.io by Juanes200122 */  -->
 <div class="container">
   <div class="skill-box" 
@@ -23,6 +24,7 @@
 v-if="popupVisible"
 :icon="activeTech.icon"
 :description="activeTech.description"
+:animated="popupVisible"
 />
 </div>
 
@@ -47,7 +49,7 @@ export default{
             level:"avanzado",
             width:"80%",
             description:"Estructuracion de paginas web",
-            icon: ` <svg xmlns="http://www.w3.org/2000/svg" width="62" height="72" viewBox="0 0 16 16"><path fill="#76b819" d="M.946 0L2.23 14.4L7.992 16l5.777-1.602L15.055 0zM12.26 4.71H5.502l.161 1.809H12.1l-.485 5.422l-3.623 1.004l-3.618-1.004l-.247-2.774H5.9l.126 1.41l1.967.53l.004-.001l1.968-.531l.204-2.29H4.048l-.476-5.341h8.847l-.158 1.766z"/></svg> `
+            icon:  `<svg xmlns="http://www.w3.org/2000/svg" width="62" height="72" viewBox="0 0 16 16"><path fill="#76b819" d="M.946 0L2.23 14.4L7.992 16l5.777-1.602L15.055 0zM12.26 4.71H5.502l.161 1.809H12.1l-.485 5.422l-3.623 1.004l-3.618-1.004l-.247-2.774H5.9l.126 1.41l1.967.53l.004-.001l1.968-.531l.204-2.29H4.048l-.476-5.341h8.847l-.158 1.766z"/></svg> `
         },
          {
           name:"Css",
@@ -91,6 +93,7 @@ export default{
   background: #282828;
   margin: 0 15px;
   padding: 10px 20px;
+  line-height: 5em;
   border-radius: 7px;
 }
 
@@ -192,6 +195,120 @@ export default{
 
 
 </style>
+
+
+<!-- 
+<style scoped>
+
+/* From Uiverse.io by Juanes200122 */ 
+.container {
+  position: relative;
+  max-width: 650px;
+  width: 100%;
+  background: #282828;
+  margin: 0 15px;
+  padding: 10px 20px;
+  border-radius: 7px;
+}
+ 
+.container .skill-box {
+  width: 100%;
+  margin: 10px 0;
+}
+
+.skill-box .title {
+  display: block;
+  font-size: 20px;
+  font-weight: 400;
+  color: rgb(226, 226, 226);
+  font-family: 'Poiret one', sans-serif;
+}
+
+.skill-box .skill-bar {
+  height: 8px;
+  width: 100%;
+  border-radius: 6px;
+  margin-top: 6px;
+  background: rgba(236, 236, 236, 0.1);
+}
+
+.skill-bar .skill-per {
+  position: relative;
+  display: block;
+  height: 100%;
+  width: 90%;
+  border-radius: 6px;
+  background: rgb(226, 226, 226);
+  animation: progress 0.9s ease-in-out forwards;
+  opacity: 0;
+}
+
+.skill-per.html {
+  /*progreso de las diferentes lenguajes*/
+   width: 80%;
+  animation-delay: 0.1s;
+}
+
+.skill-per.css {
+  /*progreso de las diferentes lenguajes*/
+  width: 80%;
+  animation-delay: 0.1s;
+}
+
+.skill-per.JavaScript {
+  /*progreso de las diferentes lenguajes*/
+  width: 50%;
+  animation-delay: 0.2s;
+}
+
+@keyframes progress {
+  0% {
+    width: 0;
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.skill-per .tooltip {
+  position: absolute;
+  right: -18px;
+  top: -35px;
+  font-size: 18px;
+  font-weight: 300;
+  font-family: 'Poiret one', sans-serif;
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+  padding: 2px 4px;
+  border-radius: 3px;
+  background: rgb(226, 226, 226);
+  z-index: 1;
+  width: auto;
+  white-space: nowrap;
+  line-height: normal;
+}
+
+.tooltip::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -2px;
+  height: 10px;
+  width: 10px;
+  z-index: -1;
+  background-color: rgb(226, 226, 226);
+  transform: translateX(-50%) rotate(45deg);
+}
+
+.container-popup{
+  margin-top: 7%;
+  padding-left: 20px;
+} 
+
+
+</style>  -->
 
 
 

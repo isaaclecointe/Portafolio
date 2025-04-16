@@ -187,6 +187,7 @@ html, body{
  .seccion1{
   scroll-snap-align: start;
    height: 100vh;
+   width: 100vw;
    display: flex;
    flex-direction: column;
    align-items: center;
@@ -200,13 +201,13 @@ html, body{
  }
 
 .container{
- 
-   margin-top: -10%;
+   margin-right: auto;
+   margin-left: 12%;
+   margin-top: -15%;
    padding: 25px;
    border-radius: 5px;
-   width: 70%;
+   width: 95%;
    height: 25%;
-   line-height: 5em;
    text-align:justify;
    
   
@@ -359,6 +360,8 @@ html, body{
   margin-left: 25%;
   margin-top: -28%;
 }
+
+
 
 </style>
 

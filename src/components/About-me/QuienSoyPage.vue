@@ -2,20 +2,38 @@
 
   <div class="contenedor-general">
 <div class="contenedor-foto">
-  <foto/>
+   <Foto />
+  </div>
+  <div class="contenedor-loader">
+    <span class="signal">Señal</span>
+  <div class="loader"></div>
+
 </div>
 
 <div class="container-about-me">
-  <nombreSvg class="nombreSvgQ"/>
 
-<p class="about-me">
-    Hey soy Isaac tengo 22 años y me apasiona la tecnologia los videojuegos y toda su arte de complejidad que los conforman.
-    Actualmente vivo en Guatemala y me encuentro adquiriendo habilidades de programacion de manera autodidacta.
-    Mi viaje en programacion empezo a finales de 2022 entre en un Bootcamp que tuvo una duracion de 7 meses  donde me espcialize en Backend
-    los siguientes 5 meses me dedique a aprender y profundizar mas los conocimientos en tecnologias como MySQL,
-    deplegar aplicaciones en la nube como Oracle  y adquirir certificacion de Oracle. 
+  <div class="titulo-sobre">
+    <H1 class="titulo-mi">CTRL + Z en la vida no existe, Asi que aqui estoy </H1>
+  </div>
+
+  <p class="about-me">
+    Hey, soy Isaac Andres Lecointe Bernal.
+    Sí, Lecointe, como suena en francés: Luh-cuánt. Un apellido tan poco común que hasta yo tuve que practicar cómo decirlo y, 
+    de paso, confundir a quien intente pronunciarlo. Pero, dejando eso de lado, soy un joven de 22 años apasionado 
+    por la tecnología, los videojuegos y el arte complejo que los convierte en algo mágico.
+    <br>
+    <br>
+    Mi aventura en el mundo de la programación comenzó con la necesidad y el deseo de ayudar a las personas a simplificar
+    sus tareas diarias, impulsar la innovacion y contribuir al desarrollo economico de mi comunidad.  
+    Todo esto ocurre en un rincón del mundo llamado Guatemala, mi hogar, donde los volcanes hacen erupción y el Wi-Fi a veces también.
+    <br>
+    <br>
+    con un Bootcamp que retó mi paciencia (y mis neuronas), y desde entonces me he sumergido en tecnologías como MySQL, 
+    el despliegue de aplicaciones en la nube y certificación en Oracle. ¿Por qué? Porque me encanta transformar 
+    ideas en realidades digitales.
 
   </p>
+
 </div>
 </div>
 
@@ -69,6 +87,7 @@
 
 .contenedor-general{
   display: flex;
+
 }
 
 .nombreSvgQ{
@@ -82,16 +101,83 @@
   margin-right: auto; */
 }
 
-.contenedor-foto{
+.contenedor-loader{
+  position: fixed; /* Se posiciona relativo al viewport */
+  top: 20px;       /* Ajusta la distancia desde arriba */
+  right: 20px;     /* Ajusta la distancia desde la derecha */
+  display: flex;   /* Alinea los elementos en línea */
+  align-items: center; /* Centra verticalmente el texto y el loader */
+}
 
- margin-left: 12%;
- margin-top: 15%;
+
+.signal {
+  font-size: 23px; /* Tamaño del texto, ajústalo según necesites */
+  font-family: 'QuickSand', sans-serif; /* O la fuente que prefieras */
+  color: #000;     /* O el color que desees */
+  margin-right: 65px; /* Espacio entre el texto y el loader */
+}
+
+.loader {
+  box-sizing: border-box;
+  position: fixed;
+  display: block;
+  top: 20px;
+  right: 20px;
+  width: 60px;
+  height: 25px;
+  border: 2px solid;
+  border-radius: 3px;
+  margin-left: -3px
+}
+
+.loader::after,
+.loader::before {
+  content: "";
+  display: block;
+  box-sizing: border-box;
+  position: absolute;
+  height: 15px;
+  border-radius: 2px;
+  background: currentColor;
+  top: 3px
+}
+
+.loader::before {
+  right: -4px;
+  border-radius: 3px;
+  width: 4px
+}
+
+.loader::after {
+  width: 1px;
+  left: 3px;
+  animation: full 3s ease-in-out infinite;
+}
+
+@keyframes full {
+  20% {
+    background-color: grey
+  }
+
+  45% {
+    background-color: grey;
+  }
+
+  to {
+    width: 50px;
+    background-color: black;
+  }
+}
+
+.contenedor-foto{
+ margin-left: -2%;
+ margin-top: -3%;
 
 }
 
 
 .container-cajas{
-  scroll-snap-align: start;
+  /*scroll-snap-align: start;*/
    min-height: 100vh;
    display: flex;
    flex-direction: column;
@@ -101,23 +187,39 @@
 }
 
 .container-about-me{
-  scroll-snap-align: start;
-  min-height: 100vh;
   display: flex;
   text-align: justify;
   flex-direction: column; 
   justify-content: center;
-  width: 45%;
+  width: 78%;
   margin-left: 5%;
+ 
+  
+}
+
+.titulo-sobre{
   margin-top: 5%;
+  width: 70%;
+  background: #000;
+  padding: 0 5px;
+  border-radius: 20px;
+  
+}
+
+.titulo-mi{
+  font-family: "Fredoka", sans-serif;
+  font-weight: 400;
+  color: rgb(248, 248, 248);
 }
 
 .about-me{
-
-  font-size: 30px;
-  font-family: 'Poiret One', sans-serif;
-  
-
+  height: 500px;
+  width: 900px;  
+  font-size: 25px;
+  font-family: "Quicksand", sans-serif;
+  font-weight: 400;
+  scrollbar-width: none;
+  scrollbar-color: rgba(100, 100, 100, 0.5) transparent;
 }
 
 

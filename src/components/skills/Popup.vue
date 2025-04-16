@@ -1,13 +1,11 @@
 <template>
     
-    <!--From Uiverse.io by SouravBandyopadhyay -->
-<div class="notification">
-    <div class="notiglow"></div>
-    <div class="notiborderglow"></div>
-    <div class="notititle">Acerca de esta habilidad</div>
-    <div class="container-html" v-html="icon"> </div>
-    <div class="notibody">{{ description }}</div>
-  </div>
+                                                                                        <!--From Uiverse.io by SouravBandyopadhyay -->
+ <div :class="['notification', animated ? 'animated bounceInLeft' : '']"> 
+ <div class="notiglow"></div> <div class="notiborderglow"></div>
+ <div class="notititle">Acerca de esta habilidad</div> 
+ <div class="container-html" v-html="icon"></div> 
+ <div class="notibody">{{ description }}</div> </div>
 
 </template>
 
@@ -22,7 +20,10 @@
       description:{
         type:String,
         required:true
-      }
+      },
+      animated:{
+       type: Boolean, 
+       default: false }
     }
    };
 
@@ -30,13 +31,93 @@
 
 <style>
 
+@-webkit-keyframes bounceInLeft 
+{ from, 60%, 75%, 90%, to {
+   -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+ }
+  
+ 0% { 
+  opacity: 0;
+   -webkit-transform: translate3d(-3000px, 0, 0); 
+   transform: translate3d(-3000px, 0, 0); 
+  }
+    
+  60% {
+     opacity: 1;
+     -webkit-transform: translate3d(25px, 0, 0);
+      transform: translate3d(25px, 0, 0); 
+  }
+   
+  75% {
+     -webkit-transform: translate3d(-10px, 0, 0);
+      transform: translate3d(-10px, 0, 0); 
+    }
+     
+    90% {
+       -webkit-transform: translate3d(5px, 0, 0); 
+       transform: translate3d(5px, 0, 0); }
+
+
+       to {
+         -webkit-transform: translate3d(0, 0, 0); 
+         transform: translate3d(0, 0, 0); 
+        } 
+      }
+
+
+      @keyframes bounceInLeft {
+         from, 60%, 75%, 90%, to {
+           -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1); 
+           animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1); 
+          }
+
+          0% {
+             opacity: 0;
+              -webkit-transform: translate3d(-3000px, 0, 0); 
+              transform: translate3d(-3000px, 0, 0); 
+            }
+
+            60% {
+               opacity: 1;
+                -webkit-transform: translate3d(25px, 0, 0);
+                 transform: translate3d(25px, 0, 0); 
+                }
+
+                75% {
+                   -webkit-transform: translate3d(-10px, 0, 0); 
+                   transform: translate3d(-10px, 0, 0); 
+                  }
+
+                  90% {
+                     -webkit-transform: translate3d(5px, 0, 0); 
+                     transform: translate3d(5px, 0, 0); 
+                    }
+
+                        to {
+                          -webkit-transform: translate3d(0, 0, 0); 
+                          transform: translate3d(0, 0, 0); 
+                          }
+                        }
+                
+.animated {
+   -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both; 
+    animation-fill-mode: both; 
+  } 
+  
+.bounceInLeft {
+   -webkit-animation-name: bounceInLeft;
+    animation-name: bounceInLeft; 
+  }
+
 /* From Uiverse.io by SouravBandyopadhyay */ 
-.notification {
+.notification{
   display: flex;
   flex-direction: column;
   isolation: isolate;
   position: relative;
- 
   width: 46rem;
   height: 14rem;
   background: #29292c;
@@ -147,5 +228,9 @@
     margin-top: 40px;
     margin-left: 40px;;
 }
+
+
+
+
 
 </style>
