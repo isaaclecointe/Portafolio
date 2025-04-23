@@ -8,16 +8,18 @@
       </div>
       <div class="contenedorFondo">
       <div v-if="isExpanded" class="formulario">          
-     
-       <input class="campoNombre" required="" type="text" placeholder="Tu Nombre">     <!-- From Uiverse.io by sonusng */ -->
+      <form action="https://formsubmit.co/lecointe9325ib@gmail.com" method="POST">
+       <input type="text" name="nombre" class="campoNombre" placeholder="Tu Nombre"  required>     <!-- From Uiverse.io by sonusng */ -->
          
-       <input class="campoCorreo" required="" type="text" placeholder="Tu Email"> 
-
+       <input type="text" name="email" class="campoCorreo"  placeholder="Tu Email" required> 
+        <input type="hidden" name="_captcha" value="false">   
        <div class="seccionMensaje">
-       <textarea  class="campoMensaje" rows="6" type="text" placeholder="Escribe tu mensaje por aqui" required></textarea>
+       <textarea name="mensaje" class="campoMensaje" rows="6" type="text" placeholder="Escribe tu mensaje por aqui" required></textarea>
        <botonEnviar/>
+       
       </div>
-    </div>  
+    </form>
+    </div>
     </div>
 
      
