@@ -64,6 +64,9 @@ onMounted(() =>{
   justify-content: center;
   align-items: center;
   padding: 1rem;
+  border-top: 4px solid;
+  border-color: #750808;
+  border-radius: 20px;
 }
 
 .texto{

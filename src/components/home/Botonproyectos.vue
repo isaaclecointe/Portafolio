@@ -78,7 +78,7 @@ button.learn-more .button-text {
  bottom: 0;
  padding: 0.75rem 0;
  margin: 0 0 0 1.85rem;
- color: #282936;
+ color: #6169d2;
  font-weight: 700;
  line-height: 1.6;
  text-align: center;

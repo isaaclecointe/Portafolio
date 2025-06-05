@@ -17,9 +17,9 @@
   </div>
 
   <p class="about-me">
-    Hey, soy Isaac Andres Lecointe Bernal.
+    Hey, soy Isaac Lecointe.
     Sí, Lecointe, como suena en francés: Luh-cuánt. Un apellido tan poco común que hasta yo tuve que practicar cómo decirlo y, 
-    de paso, confundir a quien intente pronunciarlo. Pero, dejando eso de lado, soy un joven de 22 años apasionado 
+    de paso, confundir a quien intente pronunciarlo. Pero, dejando eso de lado, soy un joven apasionado 
     por la tecnología, los videojuegos y el arte complejo que los convierte en algo mágico.
     <br>
     <br>

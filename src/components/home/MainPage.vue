@@ -1,12 +1,14 @@
 <template>
     
-<nombreSvg class="nombreSvgMain"/>
-
-
+    <nombreSvg class="nombreSvgMain"/>
+   
   <main class="seccion1">
+
+    <TemaClaroOscuro class="Boton-tema" />
+  
     <div class="container">
          <Descripcion />
-         <Botonproyectos  @click="goToProyectos" />
+         <Botonproyectos  class="boton-proyecto"  @click="goToProyectos" />
 
    </div>
 
@@ -63,6 +65,7 @@
 
 <script>
 
+import TemaClaroOscuro from './TemaClaroOscuro.vue';
 import nombreSvg from '../nombreSvg.vue';
 import QuienSoy from './quienSoy.vue';
 import quienSoy from './quienSoy.vue';
@@ -86,6 +89,8 @@ import redDiscord from './redDiscord.vue';
 import redCorreo from './redCorreo.vue';
 
 
+
+
 export default {
   
     components: {
@@ -102,7 +107,8 @@ export default {
         redLinkedin,
         redGitHub,
         redDiscord,
-        redCorreo
+        redCorreo,
+        TemaClaroOscuro
   },
 
   mounted(){
@@ -123,11 +129,16 @@ export default {
 
   data(){
     return{
-      isExpanded:false
+      isExpanded:false,
+     
     };
+
   },
 
 methods: {
+
+
+  
 
   toggleExpand(){
         this.isExpanded = !this.isExpanded;
@@ -152,7 +163,7 @@ methods: {
         goToProyectos(){
   this.$router.push('/MainProjects')
    }, 
-   
+  
  }
 };
 
@@ -161,13 +172,22 @@ methods: {
 
 
 
-<style escoped>
+<style >
+
    
 .nombreSvgMain{
     position: absolute;
         left: 42%;
         top: -2%;
 }
+
+.boton-tema{
+  position:fixed;
+  top: 1rem;
+  right: 1rem;
+}
+
+
 
 .enfoque{
   position: absolute;

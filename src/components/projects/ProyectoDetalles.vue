@@ -1,17 +1,25 @@
 <template>
-    <nombreSvg />
-
+  <proyectoSlider/>
+   <section class="seccion-principal">
+         
+   </section>
 
 </template>
 
 <script>
 
-import nombreSvg from '../nombreSvg.vue';
+import ProyectoSlider from './ProyectoSlider.vue';
+
 
 export default{
+ 
     components:{
-        nombreSvg
+        ProyectoSlider
+
     }
 }
 
 </script>
+
+
+

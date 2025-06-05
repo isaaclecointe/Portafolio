@@ -14,9 +14,10 @@
         @click="goToProyectosDetalle"
 
         >
+        <div class="proyecto-linea">
             <span class="project-name" > {{ project.name }}</span>
             <span class="type-project"> {{ project.type }}</span>
-
+        </div>
             <div class="dividor" v-if="index < projects.length -1"></div>
         </div>
        
@@ -108,10 +109,16 @@
 }
 
 .dividor1{
-    height: 3px;
+    height: 1px;
     background-color: #999;
     width: 100%;
     margin: 10px 0;
+}
+
+.proyecto-linea {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .proyectos-contenedor{
@@ -138,8 +145,8 @@
 
 
 .dividor{
-    height: 2px;
-    background-color: #000;
+    height: 1px;
+    background-color: #999;
     margin: 10px 0;
     width: 100%;
     
@@ -171,10 +178,7 @@
 .preview-Image{
       width: 100%;
       height: auto;
-      
-     
+       
 }
-
-
 
 </style>
