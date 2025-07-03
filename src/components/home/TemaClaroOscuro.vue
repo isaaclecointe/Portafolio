@@ -73,12 +73,27 @@ body{
 }
 
 html.dark body {
-  background: #3a3a3a;
+  background: #0e141b;
   color: white;
 }
 
 .dark .texto{
    color:white;
+}
+html.dark .container-objetivo{
+  border: 2px solid white;
+}
+
+html.dark .container-habilidades{
+  border: 2px solid white;
+}
+
+html.dark .container-contratame{
+  border: 2px solid white;
+}
+
+html.dark .flecha-icono.stroke{
+  border: 2px solid white;
 }
 
 /* From Uiverse.io by MRez321 */ 

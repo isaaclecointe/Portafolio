@@ -70,10 +70,13 @@ onMounted(() =>{
 }
 
 .texto{
-  font-size: 18px;
+  font-size: 28px;
   color: black;
-  font-family: "Fredoka", sans-serif;
-  white-space: pre-wrap;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 300;
+  line-height: 45px;
+
+
 
   
 }

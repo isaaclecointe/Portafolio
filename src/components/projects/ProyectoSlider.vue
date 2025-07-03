@@ -12,8 +12,21 @@
         >
           <div class="slide-content">
             <div class="imagen-container">
-              <img :src="slide.img" :alt="slide.titulo" class="proyecto-imagen" />
-            </div>
+  <template v-if="slide.img">
+    <img :src="slide.img" :alt="slide.titulo" class="proyecto-imagen" />
+  </template>
+  <template v-else-if="slide.video">
+    <video 
+      class="proyecto-video"
+      :src="slide.video"
+      controls
+      autoplay
+      muted
+      loop
+    ></video>
+  </template>
+</div>
+
             <div class="info-container">
               <h2 class="proyecto-titulo">{{ slide.titulo }}</h2>
               <p class="proyecto-descripcion">{{ slide.descripcion }}</p>
@@ -79,7 +92,7 @@ export default {
           tecnologias: ["Java", "Eclipse", "Windows Builder", "PostgreSQL", "Imagenes IA"]
         },
         {
-           img:"/src/assets/Login.png",
+           video:"/src/assets/videoHotel.mp4",
            descripcion:"ventana de Login el usuario puede iniciar sesion para ingresar al sistema"
         },
         {
@@ -245,6 +258,15 @@ export default {
   overflow: hidden;
   position: relative;
   flex-shrink: 0;
+}
+
+.proyecto-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  border-radius: 12px; /* o el valor que uses para tus imágenes */
+  background-color: #3a3a3a;
 }
 
 .proyecto-imagen {

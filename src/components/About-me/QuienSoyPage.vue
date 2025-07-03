@@ -4,11 +4,7 @@
 <div class="contenedor-foto">
    <Foto />
   </div>
-  <div class="contenedor-loader">
-    <span class="signal">Señal</span>
-  <div class="loader"></div>
-
-</div>
+ 
 
 <div class="container-about-me">
 

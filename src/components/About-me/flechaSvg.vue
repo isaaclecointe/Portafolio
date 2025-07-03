@@ -9,7 +9,7 @@
 
     <path 
     d="M50.4102 2L26.3367 32L2.26322 2" 
-    stroke="black" 
+    stroke="currentColor" 
     stroke-width="2" 
     stroke-linecap="round" 
     stroke-linejoin="round"
@@ -39,7 +39,7 @@
 <style>
 
 .flecha-icono{
-
+    
     width: 52px;
     height: 43px;
     transition: transform 0.5s ease;
@@ -52,5 +52,9 @@
 .flecha-icono.down{
     transform: rotate(0deg);
 }
+
+html.dark .flecha-icono{
+    color: white;
+};
 
 </style>

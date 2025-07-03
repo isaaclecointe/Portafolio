@@ -344,7 +344,6 @@ html, body{
   border-radius: 40px;
   box-shadow: 0px 10px;
   padding: 5px 20px;
-
   justify-content: center;
 }
 
