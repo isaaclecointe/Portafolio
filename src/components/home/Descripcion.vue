@@ -1,8 +1,9 @@
 <template>
     
-   <!--/ From Uiverse.io by Saad3092003 */ --> 
- <!--<div class="one-div"></div>-->
+ 
  <div class="contenedor-text"> 
+  <h1 class="titulo-descripcion">I power apps. </h1>
+  <p class="presentacion">HEY, ESTO ES LO QUE HAGO!</p>
      <p class="texto">  
         {{ textoVisible }} <span class="cursor">|</span>
     </p> 
@@ -62,17 +63,35 @@ onMounted(() =>{
   background-color: transparent; /* Sin fondo oscuro */
   display: flex;
   justify-content: center;
-  align-items: center;
+  flex-direction: column;
+  align-items:flex-start;
   padding: 1rem;
-  border-top: 4px solid;
-  border-color: #750808;
-  border-radius: 20px;
+}
+
+.presentacion{
+  order: -1;
+  color: #99c221;
+  font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+  font-weight: 700;
+  font-size: 22px;
+  margin-bottom: 1rem;
+  letter-spacing: 1px;
+}
+
+.titulo-descripcion{
+  font-family: "Noe Display", Georgia, Times, serif;
+  color: #41474c;
+  font-weight: 500;
+  font-size: 94px;
+  margin-bottom: .33em;
+  line-height: 1;
+  margin: 0;
 }
 
 .texto{
   font-size: 28px;
-  color: black;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #41474c;
+  font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
   font-weight: 300;
   line-height: 45px;
 
