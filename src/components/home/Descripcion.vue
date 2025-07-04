@@ -2,8 +2,8 @@
     
  
  <div class="contenedor-text"> 
-  <h1 class="titulo-descripcion">I power apps. </h1>
-  <p class="presentacion">HEY, ESTO ES LO QUE HAGO!</p>
+  <h1 class="titulo-descripcion">{{ tituloVisible }}</h1>
+  <p class="presentacion" :class="{visible: mostrarPresentacion}">HEY, ESTO ES LO QUE HAGO!</p>
      <p class="texto">  
         {{ textoVisible }} <span class="cursor">|</span>
     </p> 
@@ -18,21 +18,49 @@
 
 import {ref, onMounted} from 'vue'
 
+const mostrarPresentacion = ref(false);
+
+const tituloVisible = ref('');
 const textoVisible = ref ('');
-const textoCompleto = `Soy un desarrollador backend especializado en Java y SpringBoot, comprometido con afrontar y resolver desafíos con perseverancia. Mi enfoque está en la mejora continua y en ofrecer soluciones eficientes y confiables,  con entusiasmo de poder aportar valor y nuevas ideas a su empresa.` ;
+
+const textoTitulo =`I power apps.` ;
+const textoCompleto = `Backend developer autodidacta en Java y Spring Boot. Me enfoco en soluciones claras, funcionales y bien pensadas. Aprender, mejorar y resolver es parte de mi día a día.` ;
 
 
-onMounted(() =>{
-    let i = 0;
-    const intervalo = setInterval(() => {
-        if(i < textoCompleto.length){
-            textoVisible.value += textoCompleto.charAt(i);
-            i++;
-        }else{
-            clearInterval(intervalo);
+onMounted(() => {
+  // Paso 1: Mostrar presentación con animación
+  setTimeout(() => {
+    mostrarPresentacion.value = true;
+
+    // Paso 2: Esperar a que termine la animación (0.6s + pequeño extra)
+    setTimeout(() => {
+      // Comienza a escribir el título
+      let i = 0;
+      const escribirTitulo = setInterval(() => {
+        if (i < textoTitulo.length) {
+          tituloVisible.value += textoTitulo.charAt(i);
+          i++;
+        } else {
+          clearInterval(escribirTitulo);
+
+          // Paso 3: Comienza a escribir el texto
+          let j = 0;
+          const escribirTexto = setInterval(() => {
+            if (j < textoCompleto.length) {
+              textoVisible.value += textoCompleto.charAt(j);
+              j++;
+            } else {
+              clearInterval(escribirTexto);
+            }
+          }, 80);
         }
-    }, 80);
-})
+      }, 200);
+    }, 1800); // <- espera antes de comenzar a escribir el título
+  }, 100); // <- da tiempo al DOM para aplicar la animación
+});
+
+
+
 
 </script>
 
@@ -76,6 +104,15 @@ onMounted(() =>{
   font-size: 22px;
   margin-bottom: 1rem;
   letter-spacing: 1px;
+  opacity: 0;
+  transform: translateX(-30px);
+  transition: all 0.6s ease-in-out;
+}
+
+.presentacion.visible{
+  opacity: 1;
+  transform: translateX(0);
+   transition-delay: 0.2s;
 }
 
 .titulo-descripcion{
@@ -93,7 +130,7 @@ onMounted(() =>{
   color: #41474c;
   font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
   font-weight: 300;
-  line-height: 45px;
+  line-height: 40px;
 
 
 

@@ -223,7 +223,7 @@ html, body{
 .container{
    margin-right: auto;
    margin-left: 12%;
-   margin-top: -15%;
+   margin-top: -20%;
    padding: 25px;
    border-radius: 5px;
    width: 95%;

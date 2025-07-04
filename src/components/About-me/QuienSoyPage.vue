@@ -1,6 +1,8 @@
 <template>
 
   <div class="contenedor-general">
+   <TemaClaroOscuro />
+
 <div class="contenedor-foto">
    <Foto />
   </div>
@@ -65,6 +67,7 @@
  import ObjetivoCaja from "./ObjetivoCaja.vue"
  import SoftSkill from './SoftSkill.vue';
  import Contratame from './Contratame.vue';
+ import TemaClaroOscuro from '../home/TemaClaroOscuro.vue';
 
    export default{
     components: {
@@ -72,7 +75,8 @@
         Foto,
         ObjetivoCaja,
         SoftSkill,
-        Contratame
+        Contratame,
+        TemaClaroOscuro
     }
    };
 

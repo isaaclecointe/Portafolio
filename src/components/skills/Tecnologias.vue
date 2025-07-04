@@ -1,5 +1,6 @@
 <template>
 
+     <TemaClaroOscuro />
     <nombreSvg />
 
 
@@ -21,18 +22,20 @@
 
 <script>
 
-
+import TemaClaroOscuro from '../home/TemaClaroOscuro.vue';
 import nombreSvg from '../nombreSvg.vue';
 import Habilidades1 from './Habilidades1.vue';
 import Popup from './Popup.vue';
 import Habilidades2 from './Habilidades2.vue';
+import { ssrImportKey } from 'vite/runtime';
 
 export default{
     components:{
         nombreSvg,
         Habilidades1,
         Habilidades2,
-        Popup
+        Popup,
+        TemaClaroOscuro
     },
 
 };
