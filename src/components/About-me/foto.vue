@@ -1,6 +1,6 @@
 <template>
 
-<img src="/src/assets/fotomia3.jpg" alt="foto" class="foto1">
+<img src="/src/assets/fotowhatsapp2.png" alt="foto" class="foto1">
 
 
 </template>

@@ -98,10 +98,11 @@ html.dark .flecha-icono.stroke{
 
 /* From Uiverse.io by MRez321 */ 
 .theme-switch {
-  position: absolute;
+  position: fixed;
   right: 1rem;
   top: 1rem;
   direction: rtl;
+  z-index: 1000;
 }
 
 #theme-checkbox {
